@@ -56,10 +56,44 @@
 
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
                 <div class="container text-center my-5 pt-5 pb-4">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Please waited two minutes<div id="timer">30</div></h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Please waited two minutes</h1>
+
+                    
+<h1>Timer Page</h1>
+<p id="timer">Time remaining: 30 seconds</p>
+
+<script>
+    // Function to update the timer display and close the page after 30 seconds
+    function startTimer() {
+        let seconds = 30;
+        const timerElement = document.getElementById("timer");
+
+        function updateTimer() {
+            timerElement.textContent = "Time remaining: " + seconds + " seconds";
+
+            if (seconds === 0) {
+                // Close the window after the timer expires
+                window.close();
+            } else {
+                seconds--;
+                // Call the updateTimer function after 1 second
+                setTimeout(updateTimer, 1000);
+            }
+        }
+
+        // Start the timer
+        updateTimer();
+    }
+
+    // Call the startTimer function when the page loads
+    window.onload = startTimer;
+</script>
+
+</body>
+</html>
+
                     
 <!-- Timer will be displayed here -->
-                        
 
                     <nav aria-label="breadcrumb">
                     </nav>
@@ -75,49 +109,7 @@
         <!--<div class="container"> -->
        <!-- </div>-->
        
-    
-        <script src="js/hh.js"></script>
 
-
-        <!-- Reservation Start -->
-        <!--
-                <div class="col-md-6 bg-dark d-flex align-items-center">
-                    <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">SSF SYS</h5>
-                        <h1 class="text-white mb-4">Book A Table Online</h1>
-                        <form method="post" accept=" #" name="SSF">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>   
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="number" class="form-control" id="email" name="number" placeholder="Your number">
-                                        <label for="Phone">Your Phone number</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="number" class="form-control" id="email" name="piss" placeholder="Your number">
-                                        <label for="Phone">Quality</label>
-                                      </div>
-                                            <input type="checkbox" name="pay">
-                                            <label>Go to home</label>
-                                            <input type="checkbox" name="pay">
-                                            <label>G pay</label>
-                                            <input type="checkbox" name="pay">
-                                            <label>Other</label>
-
-                                <div class="col-12">
-                                    <input class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>  -->
 
             </div>
         </div>
@@ -145,7 +137,6 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script src="js/time.js"></script>
 </body>
 
 </html>

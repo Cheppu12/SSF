@@ -9,3 +9,8 @@ form.addEventListener('submit', e => {
   .then(() => { window.location.reload(); })
   .catch(error => console.error('Error!', error.message))
 })
+
+        document.getElementById("submit").addEventListener("click", function() {
+            // Change the URL to the desired HTML page
+            window.location.href = "time.html";
+        });
